@@ -8,7 +8,7 @@ var Swords = db.get('swords');
 // });
 
 //--------//
-// CREATE //
+// CREATE 
 
 router.post('/', function(req, res) {
   Swords.insert(req.body, function(err, sword) {
@@ -71,7 +71,7 @@ router.delete('/:id', function(req,res,next){
     if(err){
       throw err;
     }
-    res.status(200).json({message: "Deleted Successfully"});
+    res.status(200).json({message: "Deleted Successfully", body: req.body.name});
   });
 });
 

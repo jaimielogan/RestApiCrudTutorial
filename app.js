@@ -14,6 +14,8 @@ var swords = require('./routes/swords');
 
 app.use('/api/swords', swords);
 
-app.listen(port, function(){
-  console.log("Listening on port", port);
-});
+// app.listen(port, function(){
+//   console.log("Listening on port", port);
+// });
+
+module.exports = app;
