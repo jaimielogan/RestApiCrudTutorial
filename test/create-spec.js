@@ -151,7 +151,7 @@ describe('GET api/swords/', function () {
   before(function(done) {
     Swords.remove({}, function() {
       // Add in 2 swords
-      Swords.insert({title: 'Master Sword', _id: '55c050595ae876b6b79ad318'}, function() {
+      Swords.insert([{title: 'Master Sword', _id: '55c050595ae876b6b79ad318'},{title: 'Sword 2', _id: '2'}], function() {
         done();
       });
     });
@@ -167,6 +167,8 @@ describe('GET api/swords/', function () {
         } else {
           assert.equal(res.body[0].title, 'Master Sword');
           assert.equal(res.body[0]._id, '55c050595ae876b6b79ad318');
+          assert.equal(res.body[1].title, 'Sword 2');
+          assert.equal(res.body[1]._id, '2');
           done();
         }
       });

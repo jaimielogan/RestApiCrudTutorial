@@ -8,7 +8,7 @@ var Swords = db.get('swords');
 // });
 
 //--------//
-// CREATE 
+// CREATE
 
 router.post('/', function(req, res) {
   Swords.insert(req.body, function(err, sword) {
